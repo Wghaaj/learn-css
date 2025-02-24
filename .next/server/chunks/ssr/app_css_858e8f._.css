@@ -1,0 +1,24 @@
+/* [project]/app/css/welcome.css [app-client] (css) */
+.title {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+
+/* [project]/app/css/html.css [app-client] (css) */
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.code {
+  background-color: #f4f4f4;
+  padding: 3px;
+  font-size: 14px;
+}
+
+
+/*# sourceMappingURL=app_css_858e8f._.css.map*/

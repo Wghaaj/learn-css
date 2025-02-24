@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/css/html.css"],"sourcesContent":["pre {\n  background-color: #f4f4f4;\n  padding: 10px;\n  font-size: 14px;\n  border-radius: 5px;\n  overflow-x: auto;\n}\n\n.code {\n  background-color: #f4f4f4;\n  padding: 3px;\n  font-size: 14px;\n}"],"names":[],"mappings":"AAAA;;;;;;;;AAQA"}},
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
