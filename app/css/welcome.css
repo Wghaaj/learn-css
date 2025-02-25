@@ -35,6 +35,7 @@ pre {
   background-color: #f4f4f4;
   padding: 10px;
   font-size: 14px;
+  font-weight: 300;
   /* display: block; */
 }
 
@@ -54,4 +55,8 @@ ol {
 
 .p-2 {
   padding: 2px;
+}
+
+.nextjs-toast {
+  display: none;
 }

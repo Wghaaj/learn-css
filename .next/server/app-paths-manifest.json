@@ -5,5 +5,7 @@
   "/dashboard/page": "app/dashboard/page.js",
   "/learn-html/page": "app/learn-html/page.js",
   "/box-model/page": "app/box-model/page.js",
-  "/selectors/page": "app/selectors/page.js"
+  "/selectors/page": "app/selectors/page.js",
+  "/cascade/page": "app/cascade/page.js",
+  "/specificity/page": "app/specificity/page.js"
 }

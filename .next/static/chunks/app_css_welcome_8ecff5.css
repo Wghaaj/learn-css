@@ -36,6 +36,7 @@ pre {
   background-color: #f4f4f4;
   padding: 10px;
   font-size: 14px;
+  font-weight: 300;
 }
 
 @media screen and (width <= 550px) {
@@ -54,6 +55,10 @@ ol {
 
 .p-2 {
   padding: 2px;
+}
+
+.nextjs-toast {
+  display: none;
 }
 
 

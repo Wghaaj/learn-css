@@ -3,7 +3,9 @@
     "[project]/app/page": [],
     "[project]/app/learn-html/page": [],
     "[project]/app/box-model/page": [],
-    "[project]/app/selectors/page": []
+    "[project]/app/selectors/page": [],
+    "[project]/app/cascade/page": [],
+    "[project]/app/specificity/page": []
   },
   "appUsingSizeAdjust": false,
   "pages": {},
