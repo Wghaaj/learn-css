@@ -1,0 +1,8 @@
+/* [project]/app/css/box.css [app-client] (css) */
+@media screen and (width <= 1024px) {
+  .main {
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=app_css_box_b52d8e.css.map*/

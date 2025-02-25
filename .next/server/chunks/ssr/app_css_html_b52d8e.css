@@ -13,4 +13,16 @@ pre {
   font-size: 14px;
 }
 
+@media screen and (width <= 550px) {
+  .main {
+    max-width: 400px;
+  }
+
+  @media screen and (width <= 400px) {
+    .main {
+      max-width: 350px;
+    }
+  }
+}
+
 /*# sourceMappingURL=app_css_html_b52d8e.css.map*/

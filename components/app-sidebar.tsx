@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react"
 import {
   Sidebar,
@@ -37,99 +39,99 @@ const data = {
       items: [
         {
           title: "Box Model",
-          url: "#",
+          url: "/box-model",
         },
         {
           title: "Selectors",
-          url: "#",
+          url: "/selectors",
         },
         {
           title: "The cascade",
-          url: "#",
+          url: "/cascade",
         },
         {
           title: "Specificity",
-          url: "#",
+          url: "/specificity",
         },
         {
           title: "Inheritance",
-          url: "#",
+          url: "/inheritance",
         },
         {
           title: "Color",
-          url: "#",
+          url: "/color",
         },
         {
           title: "Sizing Units",
-          url: "#",
+          url: "/sizing",
         },
         {
           title: "Layout",
-          url: "#",
+          url: "/layout",
         },
         {
           title: "Flexbox",
-          url: "#",
+          url: "/flexbox",
         },
         {
           title: "Grid",
-          url: "#",
+          url: "/grid",
         },
         {
           title: "Spacing",
-          url: "#",
+          url: "/spacing",
         },
         {
           title: "Pseudo-elements",
-          url: "#",
+          url: "/pseudo-elements",
         },
         {
           title: "Pseudo-classes",
-          url: "#",
+          url: "/pseudo-classes",
         },
         {
           title: "Borders",
-          url: "#",
+          url: "/borders",
         },
         {
           title: "Shadows",
-          url: "#",
+          url: "/shadows",
         },
         {
           title: "Focus",
-          url: "#",
+          url: "/focus",
         },
         {
           title: "Gradients",
-          url: "#",
+          url: "/gradients",
         },
         {
           title: "Animations",
-          url: "#",
+          url: "/animations",
         },
         {
           title: "Filters",
-          url: "#",
+          url: "/filters",
         },
         {
           title: "Lists",
-          url: "#",
+          url: "/lists",
         },
         {
           title: "Transitions",
-          url: "#",
+          url: "/transitions",
         },
         {
           title: "Overflow",
-          url: "#",
+          url: "/overflow",
         },
         {
           title: "Backgrounds",
-          url: "#",
+          url: "/backgrounds",
         },
         {
           title: "Text and Typography",
-          url: "#",
+          url: "/typography",
         },
       ],
     }
@@ -137,21 +139,29 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const [activeItem, setActiveItem] = React.useState<string | null>(null);
+
+  const handleItemClick = (title: string) => {
+    setActiveItem(title);
+  };
+
   return (
     <Sidebar {...props}>
       <SidebarHeader>
       </SidebarHeader>
       <SidebarContent>
         {/* We create a SidebarGroup for each parent. */}
-        {data.navMain.map((item) => (
-          <SidebarGroup key={item.title}>
-            <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
+        {data.navMain.map((group) => (
+          <SidebarGroup key={group.title}>
+            <SidebarGroupLabel>{group.title}</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {item.items.map((item) => (
+                {group.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={item.isActive}>
-                      <Link href={item.url}>{item.title}</Link>
+                    <SidebarMenuButton asChild isActive={activeItem === item.title}>
+                      <Link href={item.url} onClick={() => handleItemClick(item.title)}>
+                        {item.title}
+                      </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
@@ -164,4 +174,3 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     </Sidebar>
   )
 }
-
