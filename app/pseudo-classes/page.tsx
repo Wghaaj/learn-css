@@ -1,84 +1,98 @@
-
 import '../css/welcome.css';
-import Link from 'next/link';
 export default function Page() {
   return (
     <div className="max-w-screen-lg p-10 main">
-      <h1 className="title pb-5">Welcome to Learn HTML!</h1>
-      <p className="pb-2">HTML (HyperText Markup Language) is the main language used to structure web pages. It uses elements and attributes to organize content meaningfully.</p>
-      <p className="pb-2">The Document Object Model (DOM) represents an HTML document as a structured set of objects. When a browser loads a page, it turns each HTML element into a JavaScript object, creating a tree of nodes.</p>
+      <h1 className="title pb-5">Pseudo-Classes</h1>
+      <p className="pb-2">Pseudo-classes <span className="bold">select elements</span> based on their <span className="bold">state</span> or <span className="bold">position</span> in the document.</p>
+      <p className="pb-5">✅ They start with <code className="code dark:bg-gray-800 p-2">:</code> (single colon).</p>
 
-      <p className='text-xl pt-5 pb-2'><code>&lt;html&gt;</code></p>
-      <p>The <code className='code dark:bg-gray-800'>&lt;html&gt;</code> element is the root of an HTML document. It contains the <code className='code dark:bg-gray-800'>&lt;head&gt;</code> and <code className='code dark:bg-gray-800'>&lt;body&gt;</code>, which include all the page content.</p>
+      <p className="text-lg">Common Pseudo-Classes</p>
+      <ol className="ml-5 mt-5">
+        <li><code className="code dark:bg-gray-800 p-2">:hover</code><span className="bold"> (When Hovered)</span></li>
+        <pre className="code dark:bg-gray-800 mt-5 mb-5">
+          <code>
+            button:hover &#123; <br />
+            &ensp; background-color: lightblue; <br />
+            &#125;
+          </code>
+        </pre>
+        <p className="pb-2">Changes the button’s background when hovered.</p>
+        <li><code className="code dark:bg-gray-800 p-2">:active</code><span className="bold"> (When Clicked)</span></li>
+        <pre className="code dark:bg-gray-800 mt-5 mb-5">
+          <code>
+            button:active &#123; <br />
+            &ensp;background-color: red; <br />
+            &#125;
+          </code>
+        </pre>
+        <p className="pb-2">Changes color <span className="bold">when the button is clicked</span>.</p>
+        <li><code className="code dark:bg-gray-800 p-2">:focus</code><span className="bold"> (When Focused)</span></li>
+        <pre className="code dark:bg-gray-800 mt-5 mb-5">
+          <code>
+            input:focus &#123; <br />
+            &ensp; border: 2px solid blue; <br />
+            &#125;
+          </code>
+        </pre>
+        <p className="pb-2"> Changes the input field border <span className="bold"> when clicked.</span>.</p>
+        <li><code className="code dark:bg-gray-800 p-2">:nth-child(n)</code><span className="bold"> (Selects Specific Children)</span></li>
+        <pre className="code dark:bg-gray-800 mt-5 mb-5">
+          <code>
+            li:nth-child(2) &#123; <br />
+            &ensp; color: red; <br />
+            &#125;
+          </code>
+        </pre>
+        <p className="pb-2"> Selects the <span className="bold">second</span> <code className="code dark:bg-gray-800 p-2">&lt;li&gt;</code> in a list.</p>
+        <li><code className="code dark:bg-gray-800 p-2">:first-child</code><span className="bold"> & </span><code className="code dark:bg-gray-800 p-2">:last-child</code></li>
+        <pre className="code dark:bg-gray-800 mt-5 mb-5">
+          <code>
+            p:first-child &#123; <br />
+            &ensp; font-weight: bold; <br />
+            &#125;
+            <br />
+            p:last-child &#123; <br />
+            &ensp; color: blue; <br />
+            &#125;
+          </code>
+        </pre>
+        <p className="pb-2"> Styles <span className="bold">only the first or last</span> paragraph inside a container.</p>
+        <li><code className="code dark:bg-gray-800 p-2">:not(selector)</code><span className="bold">(Excludes Elements)</span></li>
+        <pre className="code dark:bg-gray-800 mt-5 mb-5">
+          <code>
+            button:not(.primary) &#123; <br />
+            &ensp; background: gray; <br />
+            &#125;
+          </code>
+        </pre>
+        <p className="pb-2"> Targets all buttons except those with the <code className="code dark:bg-gray-800 p-2">.primary</code> class.</p>
+      </ol>
 
-      <p className="text-xl pt-5 pb-2">Content language</p>
-      <p className='pb-2'>The <code className="code dark:bg-gray-800">lang</code> attribute in the <code className='code dark:bg-gray-800'>&lt;html&gt;</code> tag sets the documents language. The value is usually a two- or three-letter code, sometimes with a region code (e.g., <code className="code dark:bg-gray-800">fr-CA</code> for French in Canada).</p>
-      <p className='pb-2'>The <samp>lang</samp> attribute can also be used inside the document for sections with different languages. It helps screen readers, search engines, and translation tools understand the content.</p>
-
-      <p className="text-xl pt-5 pt-2"><code>&lt;head&gt;</code></p>
-      <p className="pb-5">The <code className='code dark:bg-gray-800'>&lt;head&gt;</code> and <code className='code dark:bg-gray-800'>&lt;body&gt;</code> are the main parts inside <code className='code dark:bg-gray-800'>&lt;html&gt;</code>:</p>
-      <pre className='mb-5 dark:bg-gray-800'><code className='code dark:bg-gray-800'>&lt;!DOCTYPE html&gt;<br></br>
-          &lt;html lang=&quot;en-US&quot;&gt;<br></br>
-          &lt;head&gt;<br></br>
-          &lt;/head&gt;<br></br>
-          &lt;body&gt;<br></br>
-          &lt;/body&gt;<br></br>
-          &lt;/html&gt;</code>
-      </pre>
-      <p className="pb-2">The <code className="code dark:bg-gray-800">&lt;head&gt;</code> contains metadata, while the <code className="code dark:bg-gray-800">&lt;body&gt;</code> holds the visible content.</p>
-
-      <p className="pt-5 text-xl pb-2">Character encoding</p>
-      <p className="pb-2">The <samp>charset</samp> declaration in <code className="code dark:bg-gray-800">&lt;head&gt;</code> sets the character encoding. It should be placed before the title to ensure proper text display.</p>
-      <p className="pb-2">While browsers default to encodings like <i>windows-1252</i>, it is best to use <code className="code dark:bg-gray-800">UTF-8</code>. This encoding supports all characters and is required in HTML5.</p>
-      <p className="pb-5">To set UTF-8 encoding, add:</p>
-      <pre className='mb-5 dark:bg-gray-800'><code>&lt;meta charset=&quot;utf-8&quot; /&gt;</code></pre>
-
-      <p className="text-xl pb-2">Document title</p>
-      <p>Each page should have a unique title inside the <code className="code">&lt;title&gt;</code> tags. This title appears in the browser tab, history, search results, and social media previews.</p>
-      <pre className="mt-5 mb-5 dark:bg-gray-800">
-        <code>&lt;title&gt; Your title &lt;/title&gt;</code>
-      </pre>
-
-      <p className="text-xl pb-2">Viewport metadata</p>
-      <p>The viewport meta tag makes your site responsive, ensuring it displays well on different screen sizes.</p>
-      <pre className='mt-5 mb-5 dark:bg-gray-800'>
-        <code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</code>
-      </pre>
-      <p>So far, our HTML file looks like this:</p>
-      <pre className='mt-5 mb-5 dark:bg-gray-800'><code className='code dark:bg-gray-800'>&lt;!DOCTYPE html&gt;<br></br>
-          &lt;html lang=&quot;en-US&quot;&gt;<br></br>
-          &lt;head&gt;<br></br>
-          &lt;meta charset=&quot;utf-8&quot; /&gt;<br></br>
-          &lt;title&gt; Your Title &lt;/title&gt;<br></br>
-          &lt;meta name=&quot;viewport&quot;content=&quot;width=device-width&quot; /&gt;<br></br>
-          &lt;/head&gt;<br></br>
-          &lt;body&gt;<br></br>
-          <br></br>
-          &lt;/body&gt;<br></br>
-          &lt;/html&gt;</code>
-      </pre>
-
-      <p className="text-xl pb-2">CSS</p>
-      <p className='pb-5'>CSS styles for your HTML are placed inside the <code className="code dark:bg-gray-800">&lt;head&gt;</code>.</p>
-      <p className='pb-5'>There are three ways to include CSS: using <code className="code dark:bg-gray-800">&lt;link&gt;</code>, <code className="code dark:bg-gray-800">&lt;style&gt;</code>, or the <samp>style</samp> attribute.</p>
-      <p className="pb-2">The best way is to use <code className="code dark:bg-gray-800">&lt;link&gt;</code> to include an external stylesheet. This keeps styles separate, improving both maintenance and performance.</p>
-      <p className='pb-2'>The syntax is <code className="code dark:bg-gray-800">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</code>, where <samp>styles.css</samp> is the file path. The <code className="code dark:bg-gray-800">type=&quot;text/css&quot;</code> attribute is not needed unless using a different style format.</p>
-      <pre className='mt-5 mb-5 dark:bg-gray-800'>
-        <code className='code dark:bg-gray-800'>&lt;!DOCTYPE html&gt;<br></br>
-          &lt;html lang=&quot;en-US&quot;&gt;<br></br>
-          &lt;head&gt;<br></br>
-          &lt;meta charset=&quot;utf-8&quot; /&gt;<br></br>
-          &lt;title&gt; Your Title &lt;/title&gt;<br></br>
-          &lt;meta name=&quot;viewport&quot;content=&quot;width=device-width&quot; /&gt;<br></br>
-          &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt; <br></br>
-          &lt;/head&gt;<br></br>
-          &lt;body&gt;<br></br>
-          <br></br>
-          &lt;/body&gt;<br></br>
-          &lt;/html&gt;</code>
-      </pre>
-
-      <p>More information about HTML you can find <Link href="https://web.dev/learn/html" className='underline text-blue-700'>here</Link></p>
+      <p className="text-lg pt-5">Example: Styling Links</p>
+      <pre className="code dark:bg-gray-800 mt-5 mb-5">
+          <code>
+            a:link &#123; <br />
+            &ensp; color: blue; <br />
+            &#125; <span className="text-gray-400"><i> / * Normal link * /</i></span>
+            <br />
+            <br />
+            a:visited &#123; <br />
+            &ensp; color: purple; <br />
+            &#125; <span className="text-gray-400"><i> / *Already clicked * /</i></span>
+            <br />
+            <br />
+            a:hover &#123; <br />
+            &ensp; text-decoration: underline; <br />
+            &#125; <span className="text-gray-400"><i> / * When hovered * /</i></span>
+            <br />
+            <br />
+            a:active &#123; <br />
+            &ensp; color: red; <br />
+            &#125; <span className="text-gray-400"><i> / * When clicked * /</i></span>
+            <br />
+          </code>
+        </pre>
+      
     </div>
   )
 }

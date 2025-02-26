@@ -20,6 +20,16 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width:640px) {
+  * {
+    font-size: 14px;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .bold {
   font-weight: 700;
 }
@@ -54,9 +64,9 @@ ol {
 }
 
 .p-2 {
-  padding: 2px;
+  padding: 3px;
 }
 
-.nextjs-toast {
-  display: none;
+.nextjs-toast, .nextjs-toast-errors-parent, .nextjs-error-with-static {
+  display: none !important;
 }

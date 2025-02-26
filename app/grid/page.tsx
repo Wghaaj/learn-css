@@ -1,84 +1,103 @@
-
 import '../css/welcome.css';
-import Link from 'next/link';
 export default function Page() {
   return (
     <div className="max-w-screen-lg p-10 main">
-      <h1 className="title pb-5">Welcome to Learn HTML!</h1>
-      <p className="pb-2">HTML (HyperText Markup Language) is the main language used to structure web pages. It uses elements and attributes to organize content meaningfully.</p>
-      <p className="pb-2">The Document Object Model (DOM) represents an HTML document as a structured set of objects. When a browser loads a page, it turns each HTML element into a JavaScript object, creating a tree of nodes.</p>
-
-      <p className='text-xl pt-5 pb-2'><code>&lt;html&gt;</code></p>
-      <p>The <code className='code dark:bg-gray-800'>&lt;html&gt;</code> element is the root of an HTML document. It contains the <code className='code dark:bg-gray-800'>&lt;head&gt;</code> and <code className='code dark:bg-gray-800'>&lt;body&gt;</code>, which include all the page content.</p>
-
-      <p className="text-xl pt-5 pb-2">Content language</p>
-      <p className='pb-2'>The <code className="code dark:bg-gray-800">lang</code> attribute in the <code className='code dark:bg-gray-800'>&lt;html&gt;</code> tag sets the documents language. The value is usually a two- or three-letter code, sometimes with a region code (e.g., <code className="code dark:bg-gray-800">fr-CA</code> for French in Canada).</p>
-      <p className='pb-2'>The <samp>lang</samp> attribute can also be used inside the document for sections with different languages. It helps screen readers, search engines, and translation tools understand the content.</p>
-
-      <p className="text-xl pt-5 pt-2"><code>&lt;head&gt;</code></p>
-      <p className="pb-5">The <code className='code dark:bg-gray-800'>&lt;head&gt;</code> and <code className='code dark:bg-gray-800'>&lt;body&gt;</code> are the main parts inside <code className='code dark:bg-gray-800'>&lt;html&gt;</code>:</p>
-      <pre className='mb-5 dark:bg-gray-800'><code className='code dark:bg-gray-800'>&lt;!DOCTYPE html&gt;<br></br>
-          &lt;html lang=&quot;en-US&quot;&gt;<br></br>
-          &lt;head&gt;<br></br>
-          &lt;/head&gt;<br></br>
-          &lt;body&gt;<br></br>
-          &lt;/body&gt;<br></br>
-          &lt;/html&gt;</code>
-      </pre>
-      <p className="pb-2">The <code className="code dark:bg-gray-800">&lt;head&gt;</code> contains metadata, while the <code className="code dark:bg-gray-800">&lt;body&gt;</code> holds the visible content.</p>
-
-      <p className="pt-5 text-xl pb-2">Character encoding</p>
-      <p className="pb-2">The <samp>charset</samp> declaration in <code className="code dark:bg-gray-800">&lt;head&gt;</code> sets the character encoding. It should be placed before the title to ensure proper text display.</p>
-      <p className="pb-2">While browsers default to encodings like <i>windows-1252</i>, it is best to use <code className="code dark:bg-gray-800">UTF-8</code>. This encoding supports all characters and is required in HTML5.</p>
-      <p className="pb-5">To set UTF-8 encoding, add:</p>
-      <pre className='mb-5 dark:bg-gray-800'><code>&lt;meta charset=&quot;utf-8&quot; /&gt;</code></pre>
-
-      <p className="text-xl pb-2">Document title</p>
-      <p>Each page should have a unique title inside the <code className="code">&lt;title&gt;</code> tags. This title appears in the browser tab, history, search results, and social media previews.</p>
-      <pre className="mt-5 mb-5 dark:bg-gray-800">
-        <code>&lt;title&gt; Your title &lt;/title&gt;</code>
+      <h1 className="title pb-5">Grid</h1>
+      <p>CSS Grid Layout is a powerful <span className="bold">two-dimensional layout system</span> for arranging elements into rows and columns.</p>
+      <p className="text-lg pb-2"> How to Enable Grid?</p>
+      <p>Set <code className="code dark:bg-gray-800 p-2">display: grid;</code> on a container:</p>
+      <pre className="code dark:bg-gray-800 mt-5 mb-5">
+        <code>
+          .container &#123; <br />
+          &ensp;  display: grid; <br />
+          &#125;
+        </code>
       </pre>
 
-      <p className="text-xl pb-2">Viewport metadata</p>
-      <p>The viewport meta tag makes your site responsive, ensuring it displays well on different screen sizes.</p>
-      <pre className='mt-5 mb-5 dark:bg-gray-800'>
-        <code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</code>
-      </pre>
-      <p>So far, our HTML file looks like this:</p>
-      <pre className='mt-5 mb-5 dark:bg-gray-800'><code className='code dark:bg-gray-800'>&lt;!DOCTYPE html&gt;<br></br>
-          &lt;html lang=&quot;en-US&quot;&gt;<br></br>
-          &lt;head&gt;<br></br>
-          &lt;meta charset=&quot;utf-8&quot; /&gt;<br></br>
-          &lt;title&gt; Your Title &lt;/title&gt;<br></br>
-          &lt;meta name=&quot;viewport&quot;content=&quot;width=device-width&quot; /&gt;<br></br>
-          &lt;/head&gt;<br></br>
-          &lt;body&gt;<br></br>
-          <br></br>
-          &lt;/body&gt;<br></br>
-          &lt;/html&gt;</code>
-      </pre>
+      <hr className="mt-5 mb-5" />
 
-      <p className="text-xl pb-2">CSS</p>
-      <p className='pb-5'>CSS styles for your HTML are placed inside the <code className="code dark:bg-gray-800">&lt;head&gt;</code>.</p>
-      <p className='pb-5'>There are three ways to include CSS: using <code className="code dark:bg-gray-800">&lt;link&gt;</code>, <code className="code dark:bg-gray-800">&lt;style&gt;</code>, or the <samp>style</samp> attribute.</p>
-      <p className="pb-2">The best way is to use <code className="code dark:bg-gray-800">&lt;link&gt;</code> to include an external stylesheet. This keeps styles separate, improving both maintenance and performance.</p>
-      <p className='pb-2'>The syntax is <code className="code dark:bg-gray-800">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</code>, where <samp>styles.css</samp> is the file path. The <code className="code dark:bg-gray-800">type=&quot;text/css&quot;</code> attribute is not needed unless using a different style format.</p>
-      <pre className='mt-5 mb-5 dark:bg-gray-800'>
-        <code className='code dark:bg-gray-800'>&lt;!DOCTYPE html&gt;<br></br>
-          &lt;html lang=&quot;en-US&quot;&gt;<br></br>
-          &lt;head&gt;<br></br>
-          &lt;meta charset=&quot;utf-8&quot; /&gt;<br></br>
-          &lt;title&gt; Your Title &lt;/title&gt;<br></br>
-          &lt;meta name=&quot;viewport&quot;content=&quot;width=device-width&quot; /&gt;<br></br>
-          &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt; <br></br>
-          &lt;/head&gt;<br></br>
-          &lt;body&gt;<br></br>
-          <br></br>
-          &lt;/body&gt;<br></br>
-          &lt;/html&gt;</code>
+      <p className="text-lg pb-2">Main Grid Properties </p>
+      <ol className='mt-5 mb-5'>
+      <li><code className="code dark:bg-gray-800 p-2">grid-template-columns</code><span className="bold"> (Define Columns)</span></li>
+        <p className='pt-2'>Specifies the number and size of columns.</p>
+        <pre className="code dark:bg-gray-800 mt-5 mb-5">
+        <code>
+          .container &#123; <br />
+          &ensp; grid-template-columns: 100px 200px auto; <br />
+          &#125;
+        </code>
       </pre>
+      <table className='mt-5 mb-5'>
+        <tr>
+          <th className='border border-black dark:border-gray-500 bg-gray-300 dark:bg-gray-800'>Value</th>
+          <th className='border border-black dark:border-gray-500 bg-gray-300 dark:bg-gray-800'>Effect</th>
+        </tr>
+        <tr>
+          <td className='border border-black dark:border-gray-500'><code className="code dark:bg-gray-800 p-2">px, %</code></td>
+          <td className='border border-black dark:border-gray-500'>Fixed width</td>
+        </tr>
+        <tr>
+          <td className='border border-black dark:border-gray-500'><code className="code dark:bg-gray-800 p-2">auto</code></td>
+          <td className='border border-black dark:border-gray-500'>Adjusts to content</td>
+        </tr>
+        <tr>
+          <td className='border border-black dark:border-gray-500'><code className="code dark:bg-gray-800 p-2">fr</code></td>
+          <td className='border border-black dark:border-gray-500'>Flexible fraction</td>
+        </tr>
+      </table>
+      <li><code className="code dark:bg-gray-800 p-2">grid-template-rows</code><span className="bold"> (Define Rows)</span></li>
+        <p className='pt-2'>Controls row height.</p>
+        <pre className="code dark:bg-gray-800 mt-5 mb-5">
+        <code>
+          .container &#123; <br />
+          &ensp; grid-template-rows: 100px auto; <br />
+          &#125;
+        </code>
+      </pre>
+      <li><code className="code dark:bg-gray-800 p-2">grid-gap</code><span className="bold"> (Spacing Between Grid Items)</span></li>
+        <pre className="code dark:bg-gray-800 mt-5 mb-5">
+        <code>
+          .container &#123; <br />
+          &ensp; grid-gap: 10px; <br />
+          &#125;
+        </code>
+      </pre>
+      <li><code className="code dark:bg-gray-800 p-2">grid-column</code> <span className="bold">and </span><code className="code dark:bg-gray-800 p-2">grid-row</code><span className="bold"> (Span Items Across Grid)</span></li>
+        <pre className="code dark:bg-gray-800 mt-5 mb-5">
+        <code>
+          .item &#123; <br />
+          &ensp; grid-column: 1 / 3; <span className="text-gray-400"><i>/ * Spans two columns * /</i></span> <br />
+          &#125;
+        </code>
+      </pre>
+      </ol>
 
-      <p>More information about HTML you can find <Link href="https://web.dev/learn/html" className='underline text-blue-700'>here</Link></p>
+      <hr className="mt-5 mb-5" />
+
+      <p className="text-lg pb-2">Example: Basic 3-Column Grid Layout</p>
+      <pre className="code dark:bg-gray-800 mt-5 mb-5">
+        <code>
+          .container &#123; <br />
+          &ensp; display: grid;  <br />
+          &ensp; grid-template-columns: repeat(3, 1fr); <br />
+          &ensp; gap: 10px; <br />
+          &#125;
+        </code>
+      </pre>
+      <pre className="code dark:bg-gray-800 mt-5 mb-5">
+        <code>
+          &lt;div class=&quot;container&quot;&gt; <br />
+          &ensp;&lt;div class=&quot;box&quot;&gt; 1 &lt;/div&gt; <br />
+          &ensp;&lt;div class=&quot;box&quot;&gt; 2 &lt;/div&gt; <br />
+          &ensp;&lt;div class=&quot;box&quot;&gt; 3 &lt;/div&gt; <br />
+          &lt;/div&gt;
+        </code>
+      </pre>
+      <iframe height="300" scrolling="no" title="Untitled" src="https://codepen.io/Wghaaj/embed/vEYKPxP?default-tab=html%2Cresult&editable=true" loading="lazy" >
+        See the Pen <a href="https://codepen.io/Wghaaj/pen/vEYKPxP">
+        Untitled</a> by Diana Kravchuk (<a href="https://codepen.io/Wghaaj">@Wghaaj</a>)
+        on <a href="https://codepen.io">CodePen</a>.
+    </iframe>
     </div>
   )
 }

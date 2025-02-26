@@ -86,16 +86,6 @@ export default function Page() {
                 <p className="pt-2">If an element appears larger than expected, check if padding and border are affecting the total width.</p>
                 <p className='pt-2'>If an element <code className="code dark:bg-gray-800 p-2">box-sizing: border-box;</code> to include them in the total size.</p>
             </ol>
-
-            <hr className="mt-5" />
-            
-            <p className="text-lg pt-5">Interactive Demo</p>
-
-            <iframe className='mt-5 mb-5' height="300" scrolling="no" title="Untitled" src="https://codepen.io/Wghaaj/embed/vEYKPxP?default-tab=css&editable=true" loading="lazy">
-                See the Pen <a href="https://codepen.io/Wghaaj/pen/vEYKPxP">
-                Untitled</a> by Diana Kravchuk (<a href="https://codepen.io/Wghaaj">@Wghaaj</a>)
-                on <a href="https://codepen.io">CodePen</a>.
-            </iframe>
             
         </div>
     );
